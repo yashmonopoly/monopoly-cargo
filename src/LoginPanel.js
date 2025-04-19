@@ -19,7 +19,7 @@ export default function LoginPanel() {
   return (
     <div style={{
       minHeight: '100vh',
-      backgroundImage: 'url(https://img.freepik.com/premium-vector/logistic-airport-terminal-with-cargo-plane-trucks-containers-hangar-building_33099-1806.jpg)',
+      backgroundImage: 'url("/A_digital_rendering_in_a_screenshot_showcases_Mono.png")',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
