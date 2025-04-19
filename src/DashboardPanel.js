@@ -1,7 +1,5 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
 
 export default function DashboardPanel() {
   const modules = [
@@ -14,93 +12,60 @@ export default function DashboardPanel() {
     { name: 'Admin Panel', route: '/admin' }
   ];
 
-  const sampleData = [
-    { name: 'Mon', Bookings: 10 },
-    { name: 'Tue', Bookings: 15 },
-    { name: 'Wed', Bookings: 8 },
-    { name: 'Thu', Bookings: 20 },
-    { name: 'Fri', Bookings: 12 },
-    { name: 'Sat', Bookings: 18 },
-    { name: 'Sun', Bookings: 5 }
-  ];
+  const [hovered, setHovered] = useState(null);
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: '#f1f5f9', fontFamily: 'Segoe UI, sans-serif' }}>
-      <header style={{
-        backgroundColor: '#0f172a',
-        padding: '20px 40px',
-        color: '#ffffff',
-        fontSize: '22px',
-        fontWeight: '600',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between'
-      }}>
-        <span>MONOPOLY CARGO</span>
-        <span style={{ fontSize: '14px', fontWeight: '400', opacity: 0.8 }}>Dashboard</span>
-      </header>
+    <div style={{
+      minHeight: '100vh',
+      background: 'linear-gradient(to right, #e0f7fa, #ffffff)',
+      fontFamily: 'Segoe UI, sans-serif',
+      padding: '40px 20px',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center'
+    }}>
+      <h1 style={{
+        fontSize: '32px',
+        fontWeight: '700',
+        marginBottom: '40px',
+        color: '#0f172a'
+      }}>Welcome to Monopoly Cargo Dashboard</h1>
 
-      <main style={{
-        padding: '40px 20px',
-        maxWidth: '1100px',
-        margin: '0 auto'
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+        gap: '30px',
+        width: '100%',
+        maxWidth: '960px'
       }}>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-          gap: '24px',
-          marginBottom: '50px'
-        }}>
-          {modules.map((mod, index) => (
-            <Link
-              key={index}
-              to={mod.route}
-              style={{
-                background: '#ffffff',
-                padding: '28px 24px',
-                borderRadius: '14px',
-                textAlign: 'center',
-                textDecoration: 'none',
-                fontSize: '16px',
-                fontWeight: '600',
-                color: '#1e293b',
-                boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
-                transition: 'all 0.2s ease-in-out'
-              }}
-              onMouseOver={(e) => {
-                e.currentTarget.style.transform = 'translateY(-4px)';
-                e.currentTarget.style.background = '#e0f2fe';
-                e.currentTarget.style.boxShadow = '0 8px 20px rgba(0,0,0,0.1)';
-              }}
-              onMouseOut={(e) => {
-                e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.background = '#ffffff';
-                e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.05)';
-              }}
-            >
-              {mod.name}
-            </Link>
-          ))}
-        </div>
-
-        <div style={{
-          background: '#ffffff',
-          borderRadius: '16px',
-          padding: '20px',
-          boxShadow: '0 8px 20px rgba(0,0,0,0.04)'
-        }}>
-          <h3 style={{ fontSize: '18px', marginBottom: '20px', color: '#0f172a' }}>Weekly Booking Overview</h3>
-          <div style={{ width: '100%', height: '300px' }}>
-            <BarChart width={600} height={300} data={sampleData}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="name" />
-              <YAxis />
-              <Tooltip />
-              <Bar dataKey="Bookings" fill="#0ea5e9" radius={[4, 4, 0, 0]} />
-            </BarChart>
-          </div>
-        </div>
-      </main>
+        {modules.map((mod, index) => (
+          <Link
+            key={index}
+            to={mod.route}
+            onMouseEnter={() => setHovered(index)}
+            onMouseLeave={() => setHovered(null)}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              height: '120px',
+              background: hovered === index ? '#d0f0fd' : '#ffffff',
+              borderRadius: '16px',
+              textDecoration: 'none',
+              color: '#0f172a',
+              fontSize: '18px',
+              fontWeight: '600',
+              boxShadow: '0 8px 16px rgba(0, 0, 0, 0.05)',
+              transition: 'all 0.3s ease-in-out',
+              transform: hovered === index ? 'translateY(-6px) scale(1.03)' : 'translateY(0)',
+              textAlign: 'center'
+            }}
+          >
+            {mod.name}
+          </Link>
+        ))}
+      </div>
     </div>
   );
 }
