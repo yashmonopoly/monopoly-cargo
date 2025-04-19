@@ -10,8 +10,8 @@ import AccountsPanel from './AccountsPanel';
 import ReportsMISPanel from './ReportsMISPanel';
 import StockPanel from './StockPanel';
 import AdminPanel from './AdminPanel';
-import DashboardPanel from './DashboardPanel';
 import LoginPanel from './LoginPanel';
+import DashboardPanel from './DashboardPanel';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

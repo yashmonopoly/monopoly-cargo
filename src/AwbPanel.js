@@ -1,0 +1,1 @@
+export default function AwbPanel() { return <div>AWB Panel</div>; }

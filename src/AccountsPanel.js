@@ -1,0 +1,1 @@
+export default function AccountsPanel() { return <div>Accounts Panel</div>; }

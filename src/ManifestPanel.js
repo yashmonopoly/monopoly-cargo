@@ -1,0 +1,1 @@
+export default function ManifestPanel() { return <div>Manifest Panel</div>; }

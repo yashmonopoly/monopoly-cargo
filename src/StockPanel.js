@@ -1,0 +1,1 @@
+export default function StockPanel() { return <div>Stock Panel</div>; }

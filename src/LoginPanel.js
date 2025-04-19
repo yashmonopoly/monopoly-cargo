@@ -1,0 +1,1 @@
+export default function LoginPanel() { return <div>Login Panel</div>; }

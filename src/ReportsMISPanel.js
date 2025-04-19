@@ -1,0 +1,1 @@
+export default function ReportsMISPanel() { return <div>Reports / MIS Panel</div>; }

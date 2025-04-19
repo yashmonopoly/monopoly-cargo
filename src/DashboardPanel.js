@@ -1,0 +1,1 @@
+export default function DashboardPanel() { return <div>Dashboard Panel</div>; }

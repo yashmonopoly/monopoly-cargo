@@ -1,0 +1,1 @@
+export default function CdBookingPanel() { return <div>CD Booking Panel</div>; }
