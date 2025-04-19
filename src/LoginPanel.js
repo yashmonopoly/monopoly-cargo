@@ -19,7 +19,7 @@ export default function LoginPanel() {
   return (
     <div style={{
       minHeight: '100vh',
-      backgroundImage: 'url(https://img.freepik.com/free-vector/airport-terminal-cargo-trucks-background-airplane-loading-cartoon_107791-18238.jpg)',
+      backgroundImage: 'url(https://img.freepik.com/premium-vector/logistic-airport-terminal-with-cargo-plane-trucks-containers-hangar-building_33099-1806.jpg)',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
@@ -31,17 +31,18 @@ export default function LoginPanel() {
       <div style={{
         maxWidth: '400px',
         width: '100%',
-        backgroundColor: 'rgba(255, 255, 255, 0.92)',
+        backgroundColor: 'rgba(255, 255, 255, 0.95)',
         borderRadius: '16px',
-        boxShadow: '0 15px 35px rgba(0, 0, 0, 0.15)',
+        boxShadow: '0 10px 25px rgba(0,0,0,0.15)',
         padding: '30px',
         textAlign: 'center'
       }}>
-        <img 
-          src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" 
-          alt="Air Cargo Icon" 
-          style={{ height: '60px', marginBottom: '16px' }}
-        />
+        <div style={{
+          fontSize: '40px',
+          marginBottom: '10px'
+        }}>
+          ✈️
+        </div>
         <h2 style={{ fontSize: '22px', fontWeight: '700', color: '#1e293b', marginBottom: '6px' }}>MONOPOLY CARGO</h2>
         <p style={{ fontSize: '13px', color: '#475569', marginBottom: '24px' }}>Your Air Cargo Partner in Motion</p>
 
@@ -79,7 +80,7 @@ export default function LoginPanel() {
             style={{
               width: '100%',
               padding: '12px',
-              backgroundColor: '#0ea5e9',
+              backgroundColor: '#0284c7',
               color: '#ffffff',
               border: 'none',
               borderRadius: '8px',
