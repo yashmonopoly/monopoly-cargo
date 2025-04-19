@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 export default function DashboardPanel() {
   const modules = [
@@ -12,12 +13,18 @@ export default function DashboardPanel() {
     { name: 'Admin Panel', route: '/admin' }
   ];
 
+  const sampleData = [
+    { name: 'Mon', Bookings: 10 },
+    { name: 'Tue', Bookings: 15 },
+    { name: 'Wed', Bookings: 8 },
+    { name: 'Thu', Bookings: 20 },
+    { name: 'Fri', Bookings: 12 },
+    { name: 'Sat', Bookings: 18 },
+    { name: 'Sun', Bookings: 5 }
+  ];
+
   return (
-    <div style={{
-      minHeight: '100vh',
-      backgroundColor: '#f1f5f9',
-      fontFamily: 'Segoe UI, sans-serif'
-    }}>
+    <div style={{ minHeight: '100vh', backgroundColor: '#f1f5f9', fontFamily: 'Segoe UI, sans-serif' }}>
       <header style={{
         backgroundColor: '#0f172a',
         padding: '20px 40px',
@@ -34,42 +41,64 @@ export default function DashboardPanel() {
 
       <main style={{
         padding: '40px 20px',
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-        gap: '24px',
-        maxWidth: '1000px',
+        maxWidth: '1100px',
         margin: '0 auto'
       }}>
-        {modules.map((mod, index) => (
-          <Link
-            key={index}
-            to={mod.route}
-            style={{
-              background: '#ffffff',
-              padding: '28px 24px',
-              borderRadius: '14px',
-              textAlign: 'center',
-              textDecoration: 'none',
-              fontSize: '16px',
-              fontWeight: '600',
-              color: '#1e293b',
-              boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
-              transition: 'all 0.2s ease-in-out'
-            }}
-            onMouseOver={(e) => {
-              e.currentTarget.style.transform = 'translateY(-4px)';
-              e.currentTarget.style.background = '#e0f2fe';
-              e.currentTarget.style.boxShadow = '0 8px 20px rgba(0,0,0,0.1)';
-            }}
-            onMouseOut={(e) => {
-              e.currentTarget.style.transform = 'translateY(0)';
-              e.currentTarget.style.background = '#ffffff';
-              e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.05)';
-            }}
-          >
-            {mod.name}
-          </Link>
-        ))}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+          gap: '24px',
+          marginBottom: '50px'
+        }}>
+          {modules.map((mod, index) => (
+            <Link
+              key={index}
+              to={mod.route}
+              style={{
+                background: '#ffffff',
+                padding: '28px 24px',
+                borderRadius: '14px',
+                textAlign: 'center',
+                textDecoration: 'none',
+                fontSize: '16px',
+                fontWeight: '600',
+                color: '#1e293b',
+                boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
+                transition: 'all 0.2s ease-in-out'
+              }}
+              onMouseOver={(e) => {
+                e.currentTarget.style.transform = 'translateY(-4px)';
+                e.currentTarget.style.background = '#e0f2fe';
+                e.currentTarget.style.boxShadow = '0 8px 20px rgba(0,0,0,0.1)';
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.background = '#ffffff';
+                e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.05)';
+              }}
+            >
+              {mod.name}
+            </Link>
+          ))}
+        </div>
+
+        <div style={{
+          background: '#ffffff',
+          borderRadius: '16px',
+          padding: '20px',
+          boxShadow: '0 8px 20px rgba(0,0,0,0.04)'
+        }}>
+          <h3 style={{ fontSize: '18px', marginBottom: '20px', color: '#0f172a' }}>Weekly Booking Overview</h3>
+          <ResponsiveContainer width="100%" height={300}>
+            <BarChart data={sampleData}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="name" />
+              <YAxis />
+              <Tooltip />
+              <Bar dataKey="Bookings" fill="#0ea5e9" radius={[4, 4, 0, 0]} />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
       </main>
     </div>
   );
