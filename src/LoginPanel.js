@@ -22,23 +22,40 @@ export default function LoginPanel() {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: '#f4f4f4',
-      fontFamily: 'Arial'
+      background: 'linear-gradient(to right, #eef2f3, #ffffff)',
+      fontFamily: 'Segoe UI, sans-serif',
+      position: 'relative',
+      overflow: 'hidden'
     }}>
+      <img
+        src="https://cdn.lordicon.com/gqzfzudq.json"
+        alt="Cargo animation"
+        style={{
+          position: 'absolute',
+          top: '10%',
+          left: '10%',
+          height: '120px',
+          opacity: 0.2
+        }}
+      />
       <form onSubmit={handleLogin} style={{
         padding: '30px',
         backgroundColor: '#fff',
-        borderRadius: '10px',
-        boxShadow: '0 0 15px rgba(0,0,0,0.1)',
-        width: '300px'
+        borderRadius: '16px',
+        boxShadow: '0 12px 24px rgba(0,0,0,0.06)',
+        width: '320px',
+        zIndex: 2
       }}>
-        <h2 style={{ textAlign: 'center', marginBottom: '20px' }}>Monopoly Login</h2>
+        <div style={{ textAlign: 'center', marginBottom: '20px' }}>
+          <img src="/78e38e66-4389-4f90-b780-dd6add70dc03.png" alt="Monopoly Logo" style={{ height: '50px', marginBottom: '10px' }} />
+          <h2 style={{ fontSize: '20px', color: '#1e293b' }}>Login to Monopoly Cargo</h2>
+        </div>
         <input
           type="text"
           placeholder="Username"
           value={username}
           onChange={e => setUsername(e.target.value)}
-          style={{ width: '100%', padding: '10px', marginBottom: '10px', borderRadius: '5px' }}
+          style={{ width: '100%', padding: '10px', marginBottom: '12px', borderRadius: '8px', border: '1px solid #ccc' }}
           required
         />
         <input
@@ -46,12 +63,12 @@ export default function LoginPanel() {
           placeholder="Password"
           value={password}
           onChange={e => setPassword(e.target.value)}
-          style={{ width: '100%', padding: '10px', marginBottom: '20px', borderRadius: '5px' }}
+          style={{ width: '100%', padding: '10px', marginBottom: '20px', borderRadius: '8px', border: '1px solid #ccc' }}
           required
         />
         <button
           type="submit"
-          style={{ width: '100%', padding: '10px', backgroundColor: '#007bff', color: '#fff', borderRadius: '5px' }}
+          style={{ width: '100%', padding: '10px', backgroundColor: '#007bff', color: '#fff', borderRadius: '8px', fontWeight: 'bold' }}
         >
           Login
         </button>
