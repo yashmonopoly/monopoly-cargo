@@ -19,7 +19,7 @@ export default function LoginPanel() {
   return (
     <div style={{
       minHeight: '100vh',
-      backgroundImage: 'url("/A_digital_rendering_in_a_screenshot_showcases_Mono.png")',
+      backgroundImage: 'url("/air-india-login-bg.png")',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
