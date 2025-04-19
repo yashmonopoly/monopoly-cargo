@@ -22,58 +22,60 @@ export default function LoginPanel() {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      background: 'linear-gradient(to right, #f4f7fa, #ffffff)',
-      fontFamily: 'Segoe UI, sans-serif',
-      position: 'relative',
-      overflow: 'hidden'
+      backgroundColor: '#f0f2f5',
+      fontFamily: 'Segoe UI, sans-serif'
     }}>
-      <img
-        src="https://static.vecteezy.com/system/resources/previews/010/438/769/original/cargo-plane-flying-over-trucks-logistics-and-shipping-industry-illustration-vector.jpg"
-        alt="Cargo Background"
-        style={{
-          position: 'absolute',
-          bottom: '0',
-          right: '0',
-          height: '300px',
-          opacity: 0.08,
-          zIndex: 1
-        }}
-      />
-      <form onSubmit={handleLogin} style={{
+      <div style={{
         padding: '30px',
-        backgroundColor: '#fff',
+        backgroundColor: '#ffffff',
         borderRadius: '16px',
-        boxShadow: '0 12px 24px rgba(0,0,0,0.06)',
-        width: '320px',
-        zIndex: 2
+        boxShadow: '0 12px 24px rgba(0, 0, 0, 0.1)',
+        width: '340px'
       }}>
         <div style={{ textAlign: 'center', marginBottom: '20px' }}>
-          <img src="/logo.png" alt="Monopoly Logo" style={{ height: '50px', marginBottom: '10px' }} />
-          <h2 style={{ fontSize: '20px', color: '#1e293b' }}>Login to Monopoly Cargo</h2>
+          <div style={{
+            fontSize: '24px',
+            fontWeight: 'bold',
+            color: '#1e293b'
+          }}>
+            MONOPOLY CARGO
+          </div>
+          <div style={{ fontSize: '14px', color: '#64748b' }}>Login Panel</div>
         </div>
-        <input
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={e => setUsername(e.target.value)}
-          style={{ width: '100%', padding: '10px', marginBottom: '12px', borderRadius: '8px', border: '1px solid #ccc' }}
-          required
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={e => setPassword(e.target.value)}
-          style={{ width: '100%', padding: '10px', marginBottom: '20px', borderRadius: '8px', border: '1px solid #ccc' }}
-          required
-        />
-        <button
-          type="submit"
-          style={{ width: '100%', padding: '10px', backgroundColor: '#007bff', color: '#fff', borderRadius: '8px', fontWeight: 'bold' }}
-        >
-          Login
-        </button>
-      </form>
+        <form onSubmit={handleLogin}>
+          <input
+            type="text"
+            placeholder="Username"
+            value={username}
+            onChange={e => setUsername(e.target.value)}
+            style={{ width: '100%', padding: '10px', marginBottom: '12px', borderRadius: '8px', border: '1px solid #cbd5e1' }}
+            required
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+            style={{ width: '100%', padding: '10px', marginBottom: '20px', borderRadius: '8px', border: '1px solid #cbd5e1' }}
+            required
+          />
+          <button
+            type="submit"
+            style={{
+              width: '100%',
+              padding: '12px',
+              backgroundColor: '#2563eb',
+              color: '#ffffff',
+              borderRadius: '8px',
+              fontWeight: 'bold',
+              fontSize: '15px',
+              border: 'none'
+            }}
+          >
+            Login
+          </button>
+        </form>
+      </div>
     </div>
   );
 }
