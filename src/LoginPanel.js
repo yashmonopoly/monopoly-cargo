@@ -37,12 +37,6 @@ export default function LoginPanel() {
         padding: '30px',
         textAlign: 'center'
       }}>
-        <div style={{
-          fontSize: '40px',
-          marginBottom: '10px'
-        }}>
-          ✈️
-        </div>
         <h2 style={{ fontSize: '22px', fontWeight: '700', color: '#1e293b', marginBottom: '6px' }}>MONOPOLY CARGO</h2>
         <p style={{ fontSize: '13px', color: '#475569', marginBottom: '24px' }}>Your Air Cargo Partner in Motion</p>
 
