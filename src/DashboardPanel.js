@@ -15,7 +15,7 @@ export default function DashboardPanel() {
   return (
     <div style={{
       minHeight: '100vh',
-      backgroundColor: '#f8fafc',
+      backgroundColor: '#f1f5f9',
       fontFamily: 'Segoe UI, sans-serif'
     }}>
       <header style={{
@@ -37,7 +37,7 @@ export default function DashboardPanel() {
         display: 'grid',
         gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
         gap: '24px',
-        maxWidth: '960px',
+        maxWidth: '1000px',
         margin: '0 auto'
       }}>
         {modules.map((mod, index) => (
@@ -45,27 +45,26 @@ export default function DashboardPanel() {
             key={index}
             to={mod.route}
             style={{
-              background: 'white',
-              padding: '24px',
+              background: '#ffffff',
+              padding: '28px 24px',
               borderRadius: '14px',
               textAlign: 'center',
               textDecoration: 'none',
               fontSize: '16px',
-              fontWeight: '500',
-              color: '#0f172a',
-              boxShadow: '0 6px 12px rgba(0,0,0,0.05)',
-              transition: 'transform 0.2s ease-in-out, box-shadow 0.2s',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center'
+              fontWeight: '600',
+              color: '#1e293b',
+              boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
+              transition: 'all 0.2s ease-in-out'
             }}
-            onMouseOver={e => {
+            onMouseOver={(e) => {
               e.currentTarget.style.transform = 'translateY(-4px)';
-              e.currentTarget.style.boxShadow = '0 12px 20px rgba(0,0,0,0.08)';
+              e.currentTarget.style.background = '#e0f2fe';
+              e.currentTarget.style.boxShadow = '0 8px 20px rgba(0,0,0,0.1)';
             }}
-            onMouseOut={e => {
+            onMouseOut={(e) => {
               e.currentTarget.style.transform = 'translateY(0)';
-              e.currentTarget.style.boxShadow = '0 6px 12px rgba(0,0,0,0.05)';
+              e.currentTarget.style.background = '#ffffff';
+              e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.05)';
             }}
           >
             {mod.name}
