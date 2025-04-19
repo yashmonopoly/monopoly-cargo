@@ -22,33 +22,40 @@ export default function LoginPanel() {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: '#f0f2f5',
-      fontFamily: 'Segoe UI, sans-serif'
+      background: 'linear-gradient(to right, #dfe9f3, #ffffff)',
+      fontFamily: 'Segoe UI, sans-serif',
+      padding: '20px'
     }}>
       <div style={{
-        padding: '30px',
+        maxWidth: '400px',
+        width: '100%',
         backgroundColor: '#ffffff',
         borderRadius: '16px',
-        boxShadow: '0 12px 24px rgba(0, 0, 0, 0.1)',
-        width: '340px'
+        boxShadow: '0 15px 35px rgba(0, 0, 0, 0.1)',
+        padding: '30px',
+        textAlign: 'center'
       }}>
-        <div style={{ textAlign: 'center', marginBottom: '20px' }}>
-          <div style={{
-            fontSize: '24px',
-            fontWeight: 'bold',
-            color: '#1e293b'
-          }}>
-            MONOPOLY CARGO
-          </div>
-          <div style={{ fontSize: '14px', color: '#64748b' }}>Login Panel</div>
-        </div>
+        <img 
+          src="https://cdn-icons-png.flaticon.com/512/1046/1046857.png" 
+          alt="Cargo Illustration" 
+          style={{ height: '80px', marginBottom: '16px' }}
+        />
+        <h2 style={{ fontSize: '22px', fontWeight: '700', color: '#1e293b', marginBottom: '6px' }}>MONOPOLY CARGO</h2>
+        <p style={{ fontSize: '13px', color: '#64748b', marginBottom: '24px' }}>Your Air Cargo Partner in Motion</p>
+
         <form onSubmit={handleLogin}>
           <input
             type="text"
             placeholder="Username"
             value={username}
             onChange={e => setUsername(e.target.value)}
-            style={{ width: '100%', padding: '10px', marginBottom: '12px', borderRadius: '8px', border: '1px solid #cbd5e1' }}
+            style={{
+              width: '100%',
+              padding: '12px',
+              marginBottom: '14px',
+              borderRadius: '8px',
+              border: '1px solid #cbd5e1'
+            }}
             required
           />
           <input
@@ -56,7 +63,13 @@ export default function LoginPanel() {
             placeholder="Password"
             value={password}
             onChange={e => setPassword(e.target.value)}
-            style={{ width: '100%', padding: '10px', marginBottom: '20px', borderRadius: '8px', border: '1px solid #cbd5e1' }}
+            style={{
+              width: '100%',
+              padding: '12px',
+              marginBottom: '20px',
+              borderRadius: '8px',
+              border: '1px solid #cbd5e1'
+            }}
             required
           />
           <button
@@ -64,12 +77,12 @@ export default function LoginPanel() {
             style={{
               width: '100%',
               padding: '12px',
-              backgroundColor: '#2563eb',
+              backgroundColor: '#0ea5e9',
               color: '#ffffff',
+              border: 'none',
               borderRadius: '8px',
               fontWeight: 'bold',
-              fontSize: '15px',
-              border: 'none'
+              fontSize: '15px'
             }}
           >
             Login
