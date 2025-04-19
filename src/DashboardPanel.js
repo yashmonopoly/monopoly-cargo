@@ -1,6 +1,7 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
 
 export default function DashboardPanel() {
   const modules = [
@@ -89,15 +90,15 @@ export default function DashboardPanel() {
           boxShadow: '0 8px 20px rgba(0,0,0,0.04)'
         }}>
           <h3 style={{ fontSize: '18px', marginBottom: '20px', color: '#0f172a' }}>Weekly Booking Overview</h3>
-          <ResponsiveContainer width="100%" height={300}>
-            <BarChart data={sampleData}>
+          <div style={{ width: '100%', height: '300px' }}>
+            <BarChart width={600} height={300} data={sampleData}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="name" />
               <YAxis />
               <Tooltip />
               <Bar dataKey="Bookings" fill="#0ea5e9" radius={[4, 4, 0, 0]} />
             </BarChart>
-          </ResponsiveContainer>
+          </div>
         </div>
       </main>
     </div>
