@@ -22,20 +22,21 @@ export default function LoginPanel() {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      background: 'linear-gradient(to right, #eef2f3, #ffffff)',
+      background: 'linear-gradient(to right, #f4f7fa, #ffffff)',
       fontFamily: 'Segoe UI, sans-serif',
       position: 'relative',
       overflow: 'hidden'
     }}>
       <img
-        src="https://cdn.lordicon.com/gqzfzudq.json"
-        alt="Cargo animation"
+        src="https://static.vecteezy.com/system/resources/previews/010/438/769/original/cargo-plane-flying-over-trucks-logistics-and-shipping-industry-illustration-vector.jpg"
+        alt="Cargo Background"
         style={{
           position: 'absolute',
-          top: '10%',
-          left: '10%',
-          height: '120px',
-          opacity: 0.2
+          bottom: '0',
+          right: '0',
+          height: '300px',
+          opacity: 0.08,
+          zIndex: 1
         }}
       />
       <form onSubmit={handleLogin} style={{
@@ -47,7 +48,7 @@ export default function LoginPanel() {
         zIndex: 2
       }}>
         <div style={{ textAlign: 'center', marginBottom: '20px' }}>
-          <img src="/78e38e66-4389-4f90-b780-dd6add70dc03.png" alt="Monopoly Logo" style={{ height: '50px', marginBottom: '10px' }} />
+          <img src="/logo.png" alt="Monopoly Logo" style={{ height: '50px', marginBottom: '10px' }} />
           <h2 style={{ fontSize: '20px', color: '#1e293b' }}>Login to Monopoly Cargo</h2>
         </div>
         <input
