@@ -14,28 +14,31 @@ export default function DashboardPanel() {
 
   return (
     <div style={{
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      padding: '40px',
-      fontFamily: 'Segoe UI, sans-serif',
-      backgroundColor: '#f0f2f5',
-      minHeight: '100vh'
+      minHeight: '100vh',
+      backgroundColor: '#f8fafc',
+      fontFamily: 'Segoe UI, sans-serif'
     }}>
-      <h1 style={{
-        fontSize: '28px',
+      <header style={{
+        backgroundColor: '#0f172a',
+        padding: '20px 40px',
+        color: '#ffffff',
+        fontSize: '22px',
         fontWeight: '600',
-        marginBottom: '40px',
-        color: '#1e293b'
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between'
       }}>
-        Monopoly Cargo Dashboard
-      </h1>
-      <div style={{
+        <span>MONOPOLY CARGO</span>
+        <span style={{ fontSize: '14px', fontWeight: '400', opacity: 0.8 }}>Dashboard</span>
+      </header>
+
+      <main style={{
+        padding: '40px 20px',
         display: 'grid',
         gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
         gap: '24px',
-        width: '100%',
-        maxWidth: '960px'
+        maxWidth: '960px',
+        margin: '0 auto'
       }}>
         {modules.map((mod, index) => (
           <Link
@@ -44,28 +47,31 @@ export default function DashboardPanel() {
             style={{
               background: 'white',
               padding: '24px',
-              borderRadius: '16px',
+              borderRadius: '14px',
               textAlign: 'center',
               textDecoration: 'none',
               fontSize: '16px',
               fontWeight: '500',
               color: '#0f172a',
-              boxShadow: '0 8px 20px rgba(0, 0, 0, 0.03)',
-              transition: 'all 0.2s ease-in-out'
+              boxShadow: '0 6px 12px rgba(0,0,0,0.05)',
+              transition: 'transform 0.2s ease-in-out, box-shadow 0.2s',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
             }}
-            onMouseOver={(e) => {
+            onMouseOver={e => {
               e.currentTarget.style.transform = 'translateY(-4px)';
-              e.currentTarget.style.boxShadow = '0 12px 24px rgba(0,0,0,0.06)';
+              e.currentTarget.style.boxShadow = '0 12px 20px rgba(0,0,0,0.08)';
             }}
-            onMouseOut={(e) => {
+            onMouseOut={e => {
               e.currentTarget.style.transform = 'translateY(0)';
-              e.currentTarget.style.boxShadow = '0 8px 20px rgba(0, 0, 0, 0.03)';
+              e.currentTarget.style.boxShadow = '0 6px 12px rgba(0,0,0,0.05)';
             }}
           >
             {mod.name}
           </Link>
         ))}
-      </div>
+      </main>
     </div>
   );
 }
