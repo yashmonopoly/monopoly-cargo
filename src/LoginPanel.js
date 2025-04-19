@@ -19,29 +19,31 @@ export default function LoginPanel() {
   return (
     <div style={{
       minHeight: '100vh',
+      backgroundImage: 'url(https://img.freepik.com/free-vector/airport-terminal-cargo-trucks-background-airplane-loading-cartoon_107791-18238.jpg)',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      background: 'linear-gradient(to right, #dfe9f3, #ffffff)',
-      fontFamily: 'Segoe UI, sans-serif',
-      padding: '20px'
+      fontFamily: 'Segoe UI, sans-serif'
     }}>
       <div style={{
         maxWidth: '400px',
         width: '100%',
-        backgroundColor: '#ffffff',
+        backgroundColor: 'rgba(255, 255, 255, 0.92)',
         borderRadius: '16px',
-        boxShadow: '0 15px 35px rgba(0, 0, 0, 0.1)',
+        boxShadow: '0 15px 35px rgba(0, 0, 0, 0.15)',
         padding: '30px',
         textAlign: 'center'
       }}>
         <img 
-          src="https://cdn-icons-png.flaticon.com/512/1046/1046857.png" 
-          alt="Cargo Illustration" 
-          style={{ height: '80px', marginBottom: '16px' }}
+          src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" 
+          alt="Air Cargo Icon" 
+          style={{ height: '60px', marginBottom: '16px' }}
         />
         <h2 style={{ fontSize: '22px', fontWeight: '700', color: '#1e293b', marginBottom: '6px' }}>MONOPOLY CARGO</h2>
-        <p style={{ fontSize: '13px', color: '#64748b', marginBottom: '24px' }}>Your Air Cargo Partner in Motion</p>
+        <p style={{ fontSize: '13px', color: '#475569', marginBottom: '24px' }}>Your Air Cargo Partner in Motion</p>
 
         <form onSubmit={handleLogin}>
           <input
